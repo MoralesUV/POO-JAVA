@@ -1,28 +1,34 @@
-public class Estudiante {
+package Model;
+
+public abstract class Usuario {
     //Atributos
+    private int id;
     private String nombre;
     private String correo;
     private String matricula;
     private String telefono;
-    private String semestre;
 
-    //Metodo constructor
-    Estudiante(String nombre, String correo){
+    //Constructor
+    public Usuario(String nombre, String correo) {
         this.nombre = nombre;
         this.correo = correo;
     }
+
+    @Override
+    public String toString() {
+        return "Hola me llamo: " + nombre + ", Correo: " + correo + ", Matricula: " + matricula
+                + ", telefono: " + telefono;
+    }
+
+    public abstract void mostrarInformacionUsuario();
 
     //Comportamientos
-    public void mostrarNombre(){
-        System.out.println("Mi nombre es: " + nombre);
+    public int getId() {
+        return id;
     }
 
-    public Estudiante(String nombre, String correo, String matricula, String telefono, String semestre) {
-        this.nombre = nombre;
-        this.correo = correo;
-        this.matricula = matricula;
-        this.telefono = telefono;
-        this.semestre = semestre;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -54,18 +60,6 @@ public class Estudiante {
     }
 
     public void setTelefono(String telefono) {
-        if (telefono.length() != 10){
-            System.out.println("Telefono incorrecto");
-        }else {
-            this.telefono = telefono;
-        }
-    }
-
-    public String getSemestre() {
-        return semestre;
-    }
-
-    public void setSemestre(String semestre) {
-        this.semestre = semestre;
+        this.telefono = telefono;
     }
 }

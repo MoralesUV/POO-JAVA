@@ -1,17 +1,20 @@
+import Model.Estudiante;
+import Model.Maestro;
+
 import static UI.UIMenu.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("..::Hola Mundo::..\n");
+        maestros.add(new Maestro("Luis Morales", "morales@uv.mx"));
+        maestros.add(new Maestro("Javier Pino", "jpino@uv.mx"));
+        maestros.add(new Maestro("Jose Vergara", "jvergara@uv.mx"));
+        maestros.add(new Maestro("Patricia Martinez", "pmartinez@uv.mx"));
 
-        Estudiante estudiante = new Estudiante("Rocael Lopez", "rocael@uv.mx");
-        estudiante.mostrarNombre();
+        estudiantes.add(new Estudiante("Rocael", "rocael@uv.mx"));
+        estudiantes.add(new Estudiante("Mercader", "mercader@uv.mx"));
+        estudiantes.add(new Estudiante("Carlos", "calor@uv.mx"));
+        estudiantes.add(new Estudiante("Gerardo", "gerardo@uv.mx"));
 
-        estudiante.setNombre("Carlos Josue");
-        estudiante.setTelefono("0123456789");
-
-        System.out.println(estudiante.getTelefono());
-
-        //mostarMenu();
+        mostrarMenu();
     }
 }
