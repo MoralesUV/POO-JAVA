@@ -1,5 +1,6 @@
 import Model.Estudiante;
 import Model.Maestro;
+import Model.Secretaria;
 
 import static UI.UIMenu.*;
 
@@ -14,6 +15,11 @@ public class Main {
         estudiantes.add(new Estudiante("Mercader", "mercader@uv.mx"));
         estudiantes.add(new Estudiante("Carlos", "calor@uv.mx"));
         estudiantes.add(new Estudiante("Gerardo", "gerardo@uv.mx"));
+
+        secretarias.add(new Secretaria("Lupita", "lupita@uv.mx"));
+        secretarias.add(new Secretaria("Maria", "Maria@uv.mx"));
+        secretarias.add(new Secretaria("Juanita", "juanita@uv.mx"));
+        secretarias.add(new Secretaria("Liliana", "liliana@uv.mx"));
 
         mostrarMenu();
     }

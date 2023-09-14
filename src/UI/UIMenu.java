@@ -2,6 +2,7 @@ package UI;
 
 import Model.Estudiante;
 import Model.Maestro;
+import Model.Secretaria;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,15 +12,18 @@ public class UIMenu {
             "Julio", "Agosto", "Septiembre", "Octubre","Noviembre", "Diciembre"};
     public static ArrayList<Maestro> maestros = new ArrayList<>();
     public static ArrayList<Estudiante> estudiantes = new ArrayList<>();
+    public static ArrayList<Secretaria> secretarias = new ArrayList<>();
     public static Maestro maestroLogeado;
     public static Estudiante estudianteLogeado;
+    public static Secretaria secretariaLogeado;
 
     public static void mostrarMenu(){
         System.out.println("..::Bienvenido::..");
         System.out.println("Seleccionen una opcion:");
         System.out.println("1-Maestros");
         System.out.println("2-Estudiantes");
-        System.out.println("3-Salir");
+        System.out.println("3-Secretaria");
+        System.out.println("0-Salir");
 
         int respuesta = 0;
 
@@ -37,6 +41,10 @@ public class UIMenu {
                     loginUsuario(2);
                     break;
                 case 3:
+                    System.out.println("..::Secretaria::..");
+                    loginUsuario(3);
+                    break;
+                case 0:
                     System.out.println("..::Adios::..");
                     break;
                 default:
@@ -72,6 +80,16 @@ public class UIMenu {
                         correoCorrecto = true;
                         estudianteLogeado = estudiante;
                         UIEstudiante.mostrarMenuEstudiante();
+                    }
+                }
+            }
+
+            if (tipoUsuario == 3){
+                for (Secretaria secretaria:secretarias) {
+                    if (secretaria.getCorreo().equals(correo)){
+                        correoCorrecto = true;
+                        secretariaLogeado = secretaria;
+                        UISecretaria.mostrarMenuSecretaria();
                     }
                 }
             }
